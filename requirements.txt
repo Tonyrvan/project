@@ -4,8 +4,7 @@ numpy
 matplotlib
 scikit-learn
 tensorflow
-streamlit
-folium
-streamlit-folium
+folium==0.15.1
+streamlit-folium==0.17.0
 plotly
 openpyxl
