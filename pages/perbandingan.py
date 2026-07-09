@@ -78,7 +78,7 @@ col_t, col_b = st.columns([1.8, 1.2])
 with col_t:
     st.markdown('<div class="status-badge">Ilmu Komputer</div>', unsafe_allow_html=True)
     st.markdown('<h1 class="hero-title">Deep Learning Performance</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Perbandingan kinerja model arsitektur BiLSTM dan Stacked LSTM.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-subtitle">Perbandingan model arsitektur BiLSTM dan Stacked LSTM.</p>', unsafe_allow_html=True)
 
 with col_b:
     if not df_global.empty:
@@ -101,7 +101,6 @@ if df_global.empty:
     st.error("Model tidak ditemukan.")
     st.stop()
 
-# --- TABS ---
 st.subheader("📊 Comparative Detail (Batch Size)")
 tab256, tab512 = st.tabs(["Batch Size 256", "Batch Size 512"])
 
@@ -125,7 +124,7 @@ def render_tab_content(batch_label):
     k_s, k_b = f"stacked{batch_label}", f"bilstm{batch_label}"
     has_s, has_b = k_s in data_storage, k_b in data_storage
     
-    # 1. Tabel Metrik (Sesuai permintaan gambar kamu)
+    # 1. Tabel Metrik 
     t1, t2 = st.columns(2)
     with t1:
         if has_s: draw_metric_table("STACKED LSTM", data_storage[k_s]['metrics'])
